@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q&D SOTM DE Randomizer</title>
+</head>
+<body>
+	Hero count: <input type="number" id="hero-count" value="4" min="3" max="5" style="width:50px">
+	<button onclick="generate()">Generate</button>
+	<div id="results"></div>
+<script>
+const heroes = [
+	"Absolute Zero",
+	"Argent Adept",
+	"Bunker",
+	"Captain Cosmic",
+	"Fanatic",
+	"Haka",
+	"Legacy",
+	"Ra",
+	"Tachyon",
+	"Tempest",
+	"Unity",
+	"Wraith",
+];
+
+const villains = [
+	"Baron Blade",
+	"Omnitron",
+	"Grand Warlord Voss",
+	"Citizen Dawn",
+	"Matriarch",
+	"Akash'Buta",
+];
+
+const environments = [
+	"Megalopolis",
+	"Ruins of Atlantis",
+	"Wagnar Mars Base",
+	"Insula Primalis",
+	"Magmaria",
+	"Freedom Tower",
+];
+
+const generate = () => {
+	const qty = document.getElementById("hero-count").value || 4;
+	const picked = {
+		heroes: pick({ list: heroes, qty }),
+		villain: pick({ list: villains })[0],
+		environment: pick({ list: environments })[0],
+	};
+
+	display(picked);
+};
+
+const pick = ({ list, qty }) => {
+	const copy = [...list];
+	const results = [];
+	qty ||= 1;
+
+	while ( copy.length && results.length < qty ) {
+		const index = Math.floor(Math.random() * copy.length);
+		results.push(copy.splice(index, 1)[0]);
+	}
+
+	return results.sort();
+};
+
+const display = results => {
+	const heroLines = results.heroes.map(
+		hero => `<li>${hero}</li>`
+	).join("");
+
+	document.getElementById("results").innerHTML = `
+		<ul>
+			<li>
+				<b>Heroes:</b>
+				<ul>${ heroLines }</ul>
+			</li>
+			<li><b>Villain:</b> ${ results.villain }</li>
+			<li><b>Environment:</b> ${ results.environment }</li>
+
+		</ul>
+	`;
+};
+
+</script>
+</body>
+</html>
