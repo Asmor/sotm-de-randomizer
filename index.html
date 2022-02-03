@@ -7,8 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
-	Hero count: <input type="number" id="hero-count" value="4" min="3" max="5" style="width:50px">
-	<button id="generate-button">Generate</button>
+	<div class="controls">
+		<div class="hero-count-wrapper">
+			Heroes:
+			<label><input type="radio" name="hero-count" value="3"> 3</label>
+			<label><input type="radio" name="hero-count" value="4" checked> 4</label>
+			<label><input type="radio" name="hero-count" value="5"> 5</label>
+		</div>
+		<button id="generate-button">Generate</button>
+	</div>
 	<div id="results"></div>
 	<script src="scripts/app.js" type="module"></script>
 </body>

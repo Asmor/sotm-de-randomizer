@@ -1,5 +1,5 @@
 const generate = ({ heroes, villains, environments }) => {
-	const qty = document.getElementById("hero-count").value || 4;
+	const qty = document.querySelector("input[name='hero-count']:checked").value || 4;
 	const picked = {
 		heroes: pick({ list: heroes, qty }),
 		villain: pick({ list: villains })[0],
