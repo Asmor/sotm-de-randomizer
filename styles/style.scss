@@ -1,4 +1,4 @@
-$hero-size: 190px;
+$hero-size: 200px;
 $box-margin: 5px;
 
 @font-face {
@@ -77,6 +77,11 @@ input {
 		flex-wrap: wrap;
 		justify-content: center;
 		padding: 0 $side-padding;
+
+		.box {
+			max-height: 40vw;
+			max-width: 40vw;
+		}
 	}
 
 	&.panel__villain {
@@ -90,6 +95,8 @@ input {
 			background-position: top right;
 			height: $size;
 			width: $size;
+			max-height: 90vw;
+			max-width: 90vw;
 			text-align: center;
 
 			// Want to flip just the background image, so flip the whole thing and then flip children back
