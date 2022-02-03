@@ -79,13 +79,19 @@ button {
 	@extend %background-styles;
 
 	&.panel__heroes {
-		// Add padding so we show at most 3 heroes per row
-		$side-padding: calc((100% - ( 3 * #{$hero-size}) - (6 * #{$box-margin}) )/2);
+		// Add padding so we show at most 2 heroes per row
+		$side-padding: calc((100% - ( 2 * #{$hero-size}) - (4 * #{$box-margin}) )/2);
 
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		padding: 0 $side-padding;
+
+		&[count='5'] {
+			// With 5 heroes, show at most 3 per row
+			$side-padding: calc((100% - ( 3 * #{$hero-size}) - (6 * #{$box-margin}) )/2);
+			padding: 0 $side-padding;
+		}
 
 		.box {
 			max-height: 40vw;

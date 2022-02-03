@@ -1,9 +1,11 @@
 const generate = ({ heroes, villains, environments }) => {
 	const qty = document.querySelector("input[name='hero-count']:checked").value || 4;
+
 	const picked = {
 		heroes: pick({ list: heroes, qty }),
 		villain: pick({ list: villains })[0],
 		environment: pick({ list: environments })[0],
+		qty,
 	};
 
 	display(picked);
@@ -31,7 +33,7 @@ const display = results => {
 
 	document.getElementById("results").innerHTML = `
 		<div class="page">
-			<ul class="panel panel__heroes">${ heroLines }</ul>
+			<ul class="panel panel__heroes" count="${ results.qty }">${ heroLines }</ul>
 			<div class="vs">Vs.</div>
 			<div class="panel panel__villain">
 				 <div class="box" style="background-image: url('${ results.villain.image }')"><span>${ results.villain.name }</span></div>
