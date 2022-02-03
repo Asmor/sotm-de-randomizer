@@ -76,8 +76,6 @@ button {
 }
 
 .panel {
-	@extend %background-styles;
-
 	&.panel__heroes {
 		// Add padding so we show at most 2 heroes per row
 		$side-padding: calc((100% - ( 2 * #{$hero-size}) - (4 * #{$box-margin}) )/2);
@@ -106,19 +104,15 @@ button {
 		.box {
 			$size: 400px;
 
-			background-size: $size $size;
-			background-position: top right;
+			text-align: center;
 			height: $size;
 			width: $size;
 			max-height: 90vw;
 			max-width: 90vw;
-			text-align: center;
 
-			// Want to flip just the background image, so flip the whole thing and then flip children back
-			transform: scaleX(-100%);
-
-			& * {
-				display: block;
+			.art {
+				background-size: $size $size;
+				background-position: top right;
 				transform: scaleX(-100%);
 			}
 		}
@@ -128,7 +122,9 @@ button {
 		display: flex;
 		justify-content: center;
 		font-size: 3em;
+		position: relative;
 		text-align: center;
+		z-index: 2;
 
 		@media (max-width: $layout-breakpoint) {
 			bottom: 10px;
@@ -155,11 +151,28 @@ button {
 
 .box {
 	background-size: contain;
+	background-color: rgba(0,0,0,0.5);
 	border: 5px solid black;
-	margin: $box-margin;
 	display: block;
 	height: $hero-size;
-	width: $hero-size;
-
+	margin: $box-margin;
 	text-align: center;
+	width: $hero-size;
+	position: relative;
+}
+
+.art {
+	@extend %background-styles;
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.box-name {
+	position: relative;
+	z-index: 2;
 }

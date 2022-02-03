@@ -1,7 +1,7 @@
 @font-face {
   font-family: "komika";
   src: url("../resources/KMKDSPK_.ttf"); }
-body, .panel {
+body, .art {
   background-size: contain;
   background-repeat: no-repeat; }
 
@@ -58,22 +58,22 @@ button {
   display: flex;
   justify-content: center; }
   .panel.panel__villain .box {
-    background-size: 400px 400px;
-    background-position: top right;
+    text-align: center;
     height: 400px;
     width: 400px;
     max-height: 90vw;
-    max-width: 90vw;
-    text-align: center;
-    transform: scaleX(-100%); }
-    .panel.panel__villain .box * {
-      display: block;
+    max-width: 90vw; }
+    .panel.panel__villain .box .art {
+      background-size: 400px 400px;
+      background-position: top right;
       transform: scaleX(-100%); }
 .panel.panel__environment {
   display: flex;
   justify-content: center;
   font-size: 3em;
-  text-align: center; }
+  position: relative;
+  text-align: center;
+  z-index: 2; }
   @media (max-width: 1000px) {
     .panel.panel__environment {
       bottom: 10px;
@@ -98,11 +98,25 @@ button {
 
 .box {
   background-size: contain;
+  background-color: rgba(0, 0, 0, 0.5);
   border: 5px solid black;
-  margin: 5px;
   display: block;
   height: 200px;
+  margin: 5px;
+  text-align: center;
   width: 200px;
-  text-align: center; }
+  position: relative; }
+
+.art {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; }
+
+.box-name {
+  position: relative;
+  z-index: 2; }
 
 /*# sourceMappingURL=style.css.map */
