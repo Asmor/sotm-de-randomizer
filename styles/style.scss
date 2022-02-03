@@ -104,6 +104,7 @@ input {
 		display: flex;
 		justify-content: center;
 		font-size: 3em;
+		text-align: center;
 	}
 
 	&.panel__heroes { grid-area: heroes; }
