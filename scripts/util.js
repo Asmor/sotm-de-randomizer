@@ -1,10 +1,12 @@
-const generate = ({ heroes, villains, environments }) => {
+import content from "./content.js";
+
+const generate = () => {
 	const qty = document.querySelector("input[name='hero-count']:checked").value || 4;
 
 	const picked = {
-		heroes: pick({ list: heroes, qty }),
-		villain: pick({ list: villains })[0],
-		environment: pick({ list: environments })[0],
+		heroes: pick({ list: content.heroes, qty }),
+		villain: pick({ list: content.villains })[0],
+		environment: pick({ list: content.environments })[0],
 		qty,
 	};
 
