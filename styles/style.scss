@@ -1,4 +1,5 @@
 $hero-size: 200px;
+$box-margin: 5px;
 
 @font-face {
 	font-family: "komika";
@@ -69,7 +70,7 @@ input {
 
 	&.panel__heroes {
 		// Add padding so we show at most 3 heroes per row
-		$side-padding: calc((100% - 3 * #{$hero-size})/2);
+		$side-padding: calc((100% - ( 3 * #{$hero-size}) - (6 * #{$box-margin}) )/2);
 
 		display: flex;
 		flex-wrap: wrap;
@@ -122,6 +123,8 @@ input {
 
 .box {
 	background-size: contain;
+	border: 5px solid black;
+	margin: $box-margin;
 	display: block;
 	height: $hero-size;
 	width: $hero-size;
