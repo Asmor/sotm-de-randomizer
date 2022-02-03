@@ -1,0 +1,33 @@
+export default {
+	name: "Core",
+	heroes: [
+		{ name: "Absolute Zero",  image: "images/core/heroes/absolute-zero.png" },
+		{ name: "Argent Adept",   image: "images/core/heroes/argent-adept.png" },
+		{ name: "Bunker",         image: "images/core/heroes/bunker.png" },
+		{ name: "Captain Cosmic", image: "images/core/heroes/captain-cosmic.png" },
+		{ name: "Fanatic",        image: "images/core/heroes/fanatic.png" },
+		{ name: "Haka",           image: "images/core/heroes/haka.png" },
+		{ name: "Legacy",         image: "images/core/heroes/legacy.png" },
+		{ name: "Ra",             image: "images/core/heroes/ra.png" },
+		{ name: "Tachyon",        image: "images/core/heroes/tachyon.png" },
+		{ name: "Tempest",        image: "images/core/heroes/tempest.png" },
+		{ name: "Unity",          image: "images/core/heroes/unity.png" },
+		{ name: "Wraith",         image: "images/core/heroes/wraith.png" },
+	],
+	villains: [
+		{ name: "Akash'Buta",         image: "images/core/villains/akash-bhuta.png" },
+		{ name: "Baron Blade",        image: "images/core/villains/baron-blade.png" },
+		{ name: "Citizen Dawn",       image: "images/core/villains/citizen-dawn.png" },
+		{ name: "Grand Warlord Voss", image: "images/core/villains/grand-warlord-voss.png" },
+		{ name: "Matriarch",          image: "images/core/villains/matriarch.png" },
+		{ name: "Omnitron",           image: "images/core/villains/omnitron.png" },
+	],
+	environments: [
+		{ name: "Freedom Tower",     image: "images/core/environments/freedom-tower.jpg" },
+		{ name: "Insula Primalis",   image: "images/core/environments/insula-primalis.jpg" },
+		{ name: "Magmaria",          image: "images/core/environments/magmaria.jpg" },
+		{ name: "Megalopolis",       image: "images/core/environments/megalopolis.jpg" },
+		{ name: "Ruins of Atlantis", image: "images/core/environments/ruins-of-atlantis.jpg" },
+		{ name: "Wagner Mars Base",  image: "images/core/environments/wagner-mars-base.jpg" },
+	],
+};
