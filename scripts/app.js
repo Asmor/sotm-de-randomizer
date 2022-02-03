@@ -11,4 +11,4 @@ generate({
 	heroes: expansionCore.heroes,
 	villains: expansionCore.villains,
 	environments: expansionCore.environments,
-})
+});

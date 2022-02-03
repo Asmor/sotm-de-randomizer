@@ -1,4 +1,4 @@
-$hero-size: 200px;
+$hero-size: 190px;
 $box-margin: 5px;
 
 @font-face {
@@ -21,6 +21,7 @@ $box-margin: 5px;
 body {
 	@extend %background-styles;
 
+	background-attachment: fixed;
 	background-size: cover;
 
 	padding: 10px;
