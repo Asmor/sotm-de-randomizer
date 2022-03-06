@@ -64,7 +64,7 @@ button {
 .panel {
 	display: inline-flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .section {
@@ -108,23 +108,32 @@ button {
 
 .attributions {
 	display: none;
+	padding-right: 30px;
+	position: relative;
+}
+
+.info-target {
+	cursor: pointer;
+}
+
+.info-close {
+	bottom: 15px;
+	cursor: pointer;
+	position: fixed;
+	right: 20px;
 }
 
 .info {
-	position: fixed;
 	bottom: 10px;
+	position: fixed;
 	right: 10px;
 
-	&:before {
-		content: "info";
-	}
-
-	&:hover {
+	&.info__expanded {
 		background: white;
 		border: 3px solid black;
 		padding: 5px;
 
-		&:before {
+		.info-target {
 			display: none;
 		}
 

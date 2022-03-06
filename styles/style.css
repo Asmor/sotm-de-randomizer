@@ -47,7 +47,7 @@ button {
 .panel {
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: center; }
 
 .section {
   display: inline-flex;
@@ -72,21 +72,30 @@ button {
     max-width: 100%; }
 
 .attributions {
-  display: none; }
+  display: none;
+  padding-right: 30px;
+  position: relative; }
+
+.info-target {
+  cursor: pointer; }
+
+.info-close {
+  bottom: 15px;
+  cursor: pointer;
+  position: fixed;
+  right: 20px; }
 
 .info {
-  position: fixed;
   bottom: 10px;
+  position: fixed;
   right: 10px; }
-  .info:before {
-    content: "info"; }
-  .info:hover {
+  .info.info__expanded {
     background: white;
     border: 3px solid black;
     padding: 5px; }
-    .info:hover:before {
+    .info.info__expanded .info-target {
       display: none; }
-    .info:hover .attributions {
+    .info.info__expanded .attributions {
       display: block; }
 
 /*# sourceMappingURL=style.css.map */
