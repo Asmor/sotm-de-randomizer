@@ -26,21 +26,20 @@ const pick = ({ list, qty }) => {
 	return results.sort((a,b) => a.name.localeCompare(b.name));
 };
 
-const display = results => {
-	const heroLines = results.heroes.map(
-		hero => `<li class="box"><div class="art" style="background-image: url('${ hero.image }')"></div><span class="box-name">${ hero.name }</span></li>`
-	).join("");
+const getImg = item => `<img src="${ item.image }" alt="${ item.name }">`;
 
-	document.body.style.backgroundImage = `url('${ results.environment.image }')`;
+const display = results => {
+	const heroLines = results.heroes.map(getImg).join("");
 
 	document.getElementById("results").innerHTML = `
 		<div class="page">
-			<ul class="panel panel__heroes" count="${ results.qty }">${ heroLines }</ul>
-			<div class="vs">Vs.</div>
-			<div class="panel panel__villain">
-				 <div class="box"><div class="art" style="background-image: url('${ results.villain.image }')"></div><span class="box-name">${ results.villain.name }</span></div>
+			<div class="panel panel__heroes">
+				<div class="section section__heroes">${ heroLines }</div>
 			</div>
-			<div class="panel panel__environment">At ${ results.environment.name }</div>
+			<div class="panel panel__other">
+				<div class="section section__villain">${ getImg(results.villain) }</div>
+				<div class="section section__environment">${ getImg(results.environment) }</div>
+			</div>
 		</div>
 	`;
 };
