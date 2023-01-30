@@ -7,10 +7,16 @@
   list-style-type: none;
   box-sizing: border-box; }
 
+body {
+  background-color: transparent;
+  margin-bottom: 20px;
+  margin-top: 40px; }
+
 body, button, input {
   font-size: 1.2em;
   font-family: komika;
-  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white; }
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  color: #ddd; }
 
 .background {
   background-image: url("../images/background.jpg");
@@ -31,7 +37,7 @@ button {
 .controls {
   display: flex;
   justify-content: space-between;
-  margin: 10px auto;
+  margin: 10px;
   max-width: 500px; }
 
 .hero-count-wrapper > label {
@@ -91,11 +97,79 @@ button {
   right: 10px; }
   .info.info__expanded {
     background: white;
-    border: 3px solid black;
+    border: 3px solid #333;
     padding: 5px; }
     .info.info__expanded .info-target {
       display: none; }
     .info.info__expanded .attributions {
       display: block; }
+
+.no-image {
+  border: 3px solid #333;
+  background-color: #ccc;
+  color: #333;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center; }
+
+.not-enough-content {
+  padding: 10px;
+  text-align: center; }
+
+.config-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid #ccc;
+  background-color: #333; }
+  .config-panel .config-panel--header {
+    text-align: center;
+    height: 30px;
+    cursor: pointer; }
+  .config-panel .config-panel--body {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    padding: 0 10px; }
+  .config-panel .config-panel--shroud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0005;
+    z-index: -100;
+    display: none; }
+  .config-panel .config-panel--toggle-line {
+    cursor: pointer;
+    margin: 5px;
+    border: 1px solid transparent;
+    padding: 5px; }
+    .config-panel .config-panel--toggle-line:hover {
+      border-color: #ccc; }
+    .config-panel .config-panel--toggle-line input {
+      display: none; }
+    .config-panel .config-panel--toggle-line span {
+      position: relative; }
+    .config-panel .config-panel--toggle-line input:not(:checked) + span {
+      color: #999; }
+      .config-panel .config-panel--toggle-line input:not(:checked) + span:before {
+        content: "";
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        border-bottom: 2px solid #ccc; }
+  .config-panel.config-panel__expanded .config-panel--body {
+    padding: 10px;
+    max-height: 400px; }
+  .config-panel.config-panel__expanded .config-panel--shroud {
+    display: block; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,78 @@
+.config-panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	border-bottom: 3px solid $light;
+	background-color: $dark;
+
+	.config-panel--header {
+		text-align: center;
+		height: $config-header-height;
+		cursor: pointer;
+	}
+
+	.config-panel--body {
+		display: flex;
+		flex-direction: column;
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.5s ease-in-out;
+		padding: 0 10px;
+	}
+
+	.config-panel--shroud {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: #0005;
+		z-index: -100;
+		display: none;
+	}
+
+	.config-panel--toggle-line {
+		cursor: pointer;
+		margin: 5px;
+		border: 1px solid transparent;
+		padding: 5px;
+
+		&:hover {
+			border-color: $light;
+		}
+
+		input {
+			display: none;
+		}
+
+		span {
+			position: relative;
+		}
+
+		input:not(:checked) + span {
+			color: $disabled;
+
+			&:before {
+				content: "";
+				width: 100%;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				border-bottom: 2px solid $light;
+			}
+		}
+	}
+
+	&.config-panel__expanded {
+		.config-panel--body {
+			padding: 10px;
+			max-height: 400px;
+		}
+
+		.config-panel--shroud {
+			display: block;
+		}
+	}
+}

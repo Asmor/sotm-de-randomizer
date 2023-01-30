@@ -1,0 +1,60 @@
+export default {
+	name: "Rook City Renegades",
+	id: "rcr",
+	heroes: [
+		{ name: "Alpha",        image: null, variants: [
+			{ set: "rcr", name: "Base", base: true },
+			{ set: "rcr", name: "First Appearance" },
+			{ set: "rcr", name: "Reporter" },
+			{ set: "rcr", name: "Alpha 2000" },
+		] },
+		{ name: "Ex-Patriette", image: null, variants: [
+			{ set: "rcr", name: "Base", base: true },
+			{ set: "rcr", name: "First Appearance" },
+			{ set: "rcr", name: "Dark Watch", team: true },
+			{ set: "rcr", name: "Eclipse" },
+		] },
+		{ name: "Harpy",        image: null, variants: [
+			{ set: "rcr", name: "Base", base: true },
+			{ set: "rcr", name: "First Appearance" },
+			{ set: "rcr", name: "Dark Watch", team: true },
+			{ set: "rcr", name: "Blood Raven" },
+		] },
+		{ name: "Mister Fixer", image: null, variants: [
+			{ set: "rcr", name: "Base", base: true },
+			{ set: "rcr", name: "First Appearance" },
+			{ set: "rcr", name: "Dark Watch", team: true },
+			{ set: "rcr", name: "Blackfist" },
+		] },
+		{ name: "Nightmist",    image: null, variants: [
+			{ set: "rcr", name: "Base", base: true },
+			{ set: "rcr", name: "First Appearance" },
+			{ set: "rcr", name: "Dark Watch", team: true },
+			{ set: "rcr", name: "Mentor" },
+		] },
+		{ name: "Setback",      image: null, variants: [
+			{ set: "rcr", name: "Base", base: true },
+			{ set: "rcr", name: "First Appearance" },
+			{ set: "rcr", name: "Dark Watch", team: true },
+			{ set: "rcr", name: "Fey-Cursed" },
+		] },
+	],
+	villains: [
+		{ name: "Ambuscade",        image: null },
+		{ name: "Apex",             image: null },
+		{ name: "The Fey Court",    image: null },
+		{ name: "Gloomweaver",      image: null },
+		{ name: "Kismet",           image: null },
+		{ name: "The Organization", image: null },
+		{ name: "Plague Rat",       image: null },
+		{ name: "Spite",            image: null },
+		{ name: "Terrorform",       image: null },
+	],
+	environments: [
+		{ name: "Diamond Manor",           image: null },
+		{ name: "Pike Industrial Complex", image: null },
+		{ name: "Realm of Discord",        image: null },
+		{ name: "Rook City",               image: null },
+		{ name: "Temple of Zhu Long",      image: null },
+	],
+};

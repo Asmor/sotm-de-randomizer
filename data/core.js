@@ -1,18 +1,61 @@
 export default {
 	name: "Core",
+	id: "core",
 	heroes: [
-		{ name: "Absolute Zero",  image: "images/banners/core-hero-absolute-zero.webp" },
-		{ name: "Argent Adept",   image: "images/banners/core-hero-argent-adept.webp" },
-		{ name: "Bunker",         image: "images/banners/core-hero-bunker.webp" },
-		{ name: "Captain Cosmic", image: "images/banners/core-hero-captain-cosmic.webp" },
-		{ name: "Fanatic",        image: "images/banners/core-hero-fanatic.webp" },
-		{ name: "Haka",           image: "images/banners/core-hero-haka.webp" },
-		{ name: "Legacy",         image: "images/banners/core-hero-legacy.webp" },
-		{ name: "Ra",             image: "images/banners/core-hero-ra.webp" },
-		{ name: "Tachyon",        image: "images/banners/core-hero-tachyon.webp" },
-		{ name: "Tempest",        image: "images/banners/core-hero-tempest.webp" },
-		{ name: "Unity",          image: "images/banners/core-hero-unity.webp" },
-		{ name: "Wraith",         image: "images/banners/core-hero-wraith.webp" },
+		{ name: "Absolute Zero", image: "images/banners/core-hero-absolute-zero.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+		] },
+		{ name: "Argent Adept", image: "images/banners/core-hero-argent-adept.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+		] },
+		{ name: "Bunker", image: "images/banners/core-hero-bunker.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+			{ set: "rcr",  name: "Stealth Suit"},
+		] },
+		{ name: "Captain Cosmic", image: "images/banners/core-hero-captain-cosmic.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+		] },
+		{ name: "Fanatic", image: "images/banners/core-hero-fanatic.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+			{ set: "rcr",  name: "Haunted"},
+		] },
+		{ name: "Haka", image: "images/banners/core-hero-haka.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+			{ set: "rcr",  name: "Werewolf"},
+		] },
+		{ name: "Legacy", image: "images/banners/core-hero-legacy.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+		] },
+		{ name: "Ra", image: "images/banners/core-hero-ra.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+			{ set: "rcr",  name: "Backdraft"},
+		] },
+		{ name: "Tachyon", image: "images/banners/core-hero-tachyon.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+		] },
+		{ name: "Tempest", image: "images/banners/core-hero-tempest.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+		] },
+		{ name: "Unity", image: "images/banners/core-hero-unity.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+			{ set: "rcr",  name: "Scavenger"},
+		] },
+		{ name: "Wraith", image: "images/banners/core-hero-wraith.webp", variants: [
+			{ set: "core", name: "Base", base: true },
+			{ set: "core", name: "First Appearance"},
+			{ set: "rcr",  name: "Detective"},
+		] },
 	],
 	villains: [
 		{ name: "Akash'Buta",         image: "images/banners/core-villain-akash-bhuta.webp" },
