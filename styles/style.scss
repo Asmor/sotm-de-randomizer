@@ -156,19 +156,19 @@ button {
 }
 
 .no-image {
-	border: 3px solid $dark;
+	align-items: center;
+	align-self: center;
 	background-color: $light;
+	border: 3px solid $dark;
 	color: $dark;
 	display: flex;
+	font-size: 2rem;
 	height: 100px;
 	justify-content: center;
-	align-items: center;
-	font-size: 2rem;
-	text-align: center;
-	width: 600px;
-	max-width: 100%;
-	align-self: center;
 	margin: 10px 0;
+	max-width: 600px;
+	text-align: center;
+	width: 100%;
 }
 
 .not-enough-content {
