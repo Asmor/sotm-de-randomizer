@@ -2,7 +2,7 @@ export default {
 	name: "Rook City Renegades",
 	id: "rcr",
 	heroes: [
-		{ name: "Alpha",        image: null, variants: [
+		{ name: "Alpha", image: null, variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Reporter" },
@@ -14,7 +14,7 @@ export default {
 			{ set: "rcr", name: "Dark Watch", team: true },
 			{ set: "rcr", name: "Eclipse" },
 		] },
-		{ name: "Harpy",        image: null, variants: [
+		{ name: "Harpy", image: null, variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
@@ -26,13 +26,13 @@ export default {
 			{ set: "rcr", name: "Dark Watch", team: true },
 			{ set: "rcr", name: "Blackfist" },
 		] },
-		{ name: "Nightmist",    image: null, variants: [
+		{ name: "Nightmist", image: null, variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
 			{ set: "rcr", name: "Mentor" },
 		] },
-		{ name: "Setback",      image: null, variants: [
+		{ name: "Setback", image: "images/banners/rcr-hero-setback.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
