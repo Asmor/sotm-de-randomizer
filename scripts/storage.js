@@ -10,7 +10,7 @@ const freeze = () => {
 };
 
 const thaw = () => {
-	memory = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+	memory = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || "{}");
 	resolveThawed();
 };
 
