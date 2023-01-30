@@ -16,7 +16,7 @@ body, button, input {
   font-size: 1.2em;
   font-family: komika;
   text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
-  color: #ddd; }
+  color: #333; }
 
 .background {
   background-image: url("../images/background.jpg");
@@ -36,9 +36,8 @@ button {
 
 .controls {
   display: flex;
-  justify-content: space-between;
-  margin: 10px;
-  max-width: 500px; }
+  justify-content: space-around;
+  margin: 10px; }
 
 .hero-count-wrapper > label {
   margin: 0 5px; }
@@ -115,6 +114,7 @@ button {
   font-size: 2rem;
   text-align: center;
   width: 600px;
+  max-width: 100%;
   align-self: center;
   margin: 10px 0; }
 
