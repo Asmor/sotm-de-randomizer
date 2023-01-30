@@ -176,4 +176,19 @@ button {
 	text-align: center;
 }
 
+.hero-panel {
+	position: relative;
+
+	.hero-panel--image {
+		align-self: center;
+		max-width: 100%;
+	}
+
+	.hero-panel--variant {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
 @import "config.scss";

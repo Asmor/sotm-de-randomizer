@@ -122,6 +122,16 @@ button {
   padding: 10px;
   text-align: center; }
 
+.hero-panel {
+  position: relative; }
+  .hero-panel .hero-panel--image {
+    align-self: center;
+    max-width: 100%; }
+  .hero-panel .hero-panel--variant {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+
 .config-panel {
   position: fixed;
   top: 0;

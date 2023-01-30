@@ -1,5 +1,5 @@
 import allSets from "./sets.js";
-import { getKey, retrieve } from "./storage.js";
+import { getSetKey, retrieve } from "./storage.js";
 
 const heroes = allSets.flatMap(set => set.heroes);
 const villains = allSets.flatMap(set => set.villains);
@@ -16,8 +16,8 @@ const environments = allSets.flatMap(set => set.environments);
 
 const getContent = () => {
 	const availableSets = allSets.filter(set => {
-		const key = getKey(set);
-		return retrieve(key) !== false;
+		const key = getSetKey(set);
+		return retrieve(key, true);
 	});
 
 	return {

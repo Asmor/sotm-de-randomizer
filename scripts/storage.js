@@ -19,15 +19,17 @@ const store = (key, val) => {
 	freeze();
 };
 
-const retrieve = key => memory[key];
+const retrieve = (key, _default) => memory[key] ?? _default;
 
 addEventListener("load", thaw);
 
-const getKey = set => `enable-set-${set.id}`;
+const getSetKey = set => `enable-set-${set.id ?? set}`;
+const getOptionKey = option => `enable-option-${option}`;
 
 export {
 	store,
 	retrieve,
 	thawed,
-	getKey,
+	getSetKey,
+	getOptionKey,
 };

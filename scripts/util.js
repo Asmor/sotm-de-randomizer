@@ -1,4 +1,5 @@
 import { getContent } from "./content.js";
+import { getOptionKey, getSetKey, retrieve } from "./storage.js";
 
 const generate = () => {
 	const qty = document.querySelector("input[name='hero-count']:checked").value || 4;
@@ -44,11 +45,33 @@ const pick = ({ list, qty }) => {
 };
 
 const getImg = item => {
+	let image = `<span class="no-image">${item.name}</span>`;
+
 	if ( item.image ) {
-		return `<img src="${item.image}" alt="${item.name}" title="${item.name }">`;
+		image = `<img
+			class="hero-panel--image"
+			src="${item.image}"
+			alt="${item.name}"
+			title="${item.name }"
+		>`;
 	}
 
-	return `<span class="no-image">${item.name}</span>`;
+	let variant = "";
+
+	if ( item.variants && retrieve(getOptionKey("variants"), false) ) {
+		const candidates = item.variants.filter(
+			variant => retrieve(getSetKey(variant.set), true)
+		);
+		const chosenVariant = pick({ list: candidates })[0];
+		if ( !chosenVariant.base ) {
+			variant = `<span class="hero-panel--variant">Variant: ${chosenVariant.name }</span>`;
+		}
+	}
+
+	return `<div class="hero-panel">
+		${image}
+		${variant}
+	</div>`;
 };
 
 const display = results => {
