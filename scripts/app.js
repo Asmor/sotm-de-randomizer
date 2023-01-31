@@ -1,4 +1,4 @@
-import { generate } from "./util.js";
+import { generate } from "./generator.js";
 import configPanel from "./config.js";
 import { thawed } from "./storage.js";
 
