@@ -1,5 +1,4 @@
 import { getContent } from "./content.js";
-import { getOptionKey, getSetKey, retrieve } from "./storage.js";
 
 const generate = () => {
 	const qty = document.querySelector("input[name='hero-count']:checked").value || 4;
@@ -11,7 +10,6 @@ const generate = () => {
 		|| content.villains.length === 0
 		|| content.environments.length === 0
 	) {
-		// alert("Not enough content, please enable more sets.");
 		document.getElementById("results").innerHTML = `
 			<div class="not-enough-content">
 				Not enough content, please open settings and enable additional
@@ -22,16 +20,16 @@ const generate = () => {
 	}
 
 	const picked = {
-		heroes: pick({ list: content.heroes, qty }),
-		villain: pick({ list: content.villains })[0],
-		environment: pick({ list: content.environments })[0],
+		heroes: pickQty({ list: content.heroes, qty }),
+		villain: pickOne(content.villains),
+		environment: pickOne(content.environments),
 		qty,
 	};
 
 	display(picked);
 };
 
-const pick = ({ list, qty }) => {
+const pickQty = ({ list, qty }) => {
 	const copy = [...list];
 	const results = [];
 	qty ||= 1;
@@ -43,6 +41,8 @@ const pick = ({ list, qty }) => {
 
 	return results.sort((a,b) => a.name.localeCompare(b.name));
 };
+
+const pickOne = list => pickQty({ list, qty: 1 })[0];
 
 const getImg = item => {
 	let image = `<span class="no-image">${item.name}</span>`;
@@ -58,13 +58,14 @@ const getImg = item => {
 
 	let variant = "";
 
-	if ( item.variants && retrieve(getOptionKey("variants"), false) ) {
-		const candidates = item.variants.filter(
-			variant => retrieve(getSetKey(variant.set), true)
-		);
-		const chosenVariant = pick({ list: candidates })[0];
+	if ( item.variants ) {
+		const chosenVariant = pickOne(item.variants);
 		if ( !chosenVariant.base ) {
-			variant = `<span class="hero-panel--variant">Variant: ${chosenVariant.name }</span>`;
+			variant = `
+				<span class="hero-panel--variant">
+					Variant: ${chosenVariant.name }
+				</span>
+			`;
 		}
 	}
 
@@ -92,6 +93,4 @@ const display = results => {
 
 export {
 	generate,
-	pick,
-	display,
 };

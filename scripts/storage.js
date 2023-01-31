@@ -24,12 +24,10 @@ const retrieve = (key, _default) => memory[key] ?? _default;
 addEventListener("load", thaw);
 
 const getSetKey = set => `enable-set-${set.id ?? set}`;
-const getOptionKey = option => `enable-option-${option}`;
 
 export {
 	store,
 	retrieve,
 	thawed,
 	getSetKey,
-	getOptionKey,
 };

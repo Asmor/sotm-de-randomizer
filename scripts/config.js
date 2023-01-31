@@ -1,5 +1,6 @@
-import { store, retrieve, thawed, getSetKey, getOptionKey } from "./storage.js";
+import { store, retrieve, thawed, getSetKey } from "./storage.js";
 import allSets from "./sets.js";
+import { VARIANT_SETTING_KEY } from "./const.js";
 
 const BODY_EXPANDED_CLASS = "config-panel__expanded";
 
@@ -27,7 +28,7 @@ setsHeader.innerHTML = "Sets";
 
 const init = () => {
 	configBody.appendChild(getToggle({
-		key: getOptionKey("variants"),
+		key: VARIANT_SETTING_KEY,
 		text: "Variants",
 		defaultChecked: false,
 	}));
