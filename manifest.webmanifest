@@ -1,0 +1,13 @@
+{
+	"background_color": "#333",
+	"description": "A randomizer for Sentinels of the Multiverse Definitive Edition",
+	"display": "fullscreen",
+	"icons": [{
+		"src": "images/unity.jpg",
+		"sizes": "780x780",
+		"type": "image/jpg",
+	}],
+	"name": "Sentinels of the Multiverse Definitive Edition Randomizer",
+	"short_name": "SotM DE Randomizer",
+	"start_url": "index.html",
+}

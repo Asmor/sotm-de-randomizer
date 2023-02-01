@@ -1,4 +1,4 @@
-const cacheName = "2023-01-31 20:55:39";
+const cacheName = "2023-01-31 21:25:37";
 const cacheFiles = [
 	"data/core.js",
 	"data/rcr.js",
@@ -78,6 +78,5 @@ self.addEventListener("fetch", e => {
 
 self.addEventListener("activate", () => {
 	log("Activated!");
-	const foo = self.clients.claim();
-	log("Foo", foo);
+	self.clients.claim();
 });
