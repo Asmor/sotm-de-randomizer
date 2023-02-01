@@ -8,7 +8,7 @@ export default {
 			{ set: "rcr", name: "Reporter" },
 			{ set: "rcr", name: "Alpha 2000" },
 		] },
-		{ name: "Ex-Patriette", image: null, variants: [
+		{ name: "Ex-Patriette", image: "images/banners/rcr-hero-ex-patriette.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
@@ -26,7 +26,7 @@ export default {
 			{ set: "rcr", name: "Dark Watch", team: true },
 			{ set: "rcr", name: "Blackfist" },
 		] },
-		{ name: "Nightmist", image: null, variants: [
+		{ name: "Nightmist", image: "images/banners/rcr-hero-nightmist.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
