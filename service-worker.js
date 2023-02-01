@@ -1,4 +1,4 @@
-const cacheName = "2023-02-01 01:00:22";
+const cacheName = "2023-02-01 10:44:38";
 const cacheFiles = [
 	"data/core.js",
 	"data/rcr.js",
@@ -26,7 +26,7 @@ const cacheFiles = [
 	"images/banners/core-environment-megalopolis.webp",
 	"images/banners/core-environment-ruins-of-atlantis.webp",
 	"images/banners/core-environment-wagner-mars-base.webp",
-	"images/banners/rcr-hero-ex-patriette.png",
+	"images/banners/rcr-hero-expatriette.png",
 	"images/banners/rcr-hero-nightmist.png",
 	"images/banners/rcr-hero-setback.png",
 	"images/background.jpg",

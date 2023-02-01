@@ -8,7 +8,7 @@ export default {
 			{ set: "rcr", name: "Reporter" },
 			{ set: "rcr", name: "Alpha 2000" },
 		] },
-		{ name: "Ex-Patriette", image: "images/banners/rcr-hero-ex-patriette.png", variants: [
+		{ name: "Expatriette", image: "images/banners/rcr-hero-expatriette.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
