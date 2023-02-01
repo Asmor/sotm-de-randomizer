@@ -43,8 +43,6 @@ const cacheFiles = [
 
 const log = (...args) => console.log("[Service worker]", ...args);
 
-log("Testing?");
-
 self.addEventListener("install", e => {
 	log("Installed.");
 
