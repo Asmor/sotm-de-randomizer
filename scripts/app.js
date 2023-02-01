@@ -22,7 +22,6 @@ if ( "serviceWorker" in navigator ) {
 	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
 		(...args) => {
 			console.log("Service worker registered", args);
-			fetch("/index.html").then(resp => console.log("fetched index", resp));
 		}
 	));
 }
