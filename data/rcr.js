@@ -14,7 +14,7 @@ export default {
 			{ set: "rcr", name: "Dark Watch", team: true },
 			{ set: "rcr", name: "Eclipse" },
 		] },
-		{ name: "Harpy", image: null, variants: [
+		{ name: "Harpy", image: "images/banners/rcr-hero-harpy.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
