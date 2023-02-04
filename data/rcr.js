@@ -2,7 +2,7 @@ export default {
 	name: "Rook City Renegades",
 	id: "rcr",
 	heroes: [
-		{ name: "Alpha", image: null, variants: [
+		{ name: "Alpha", image: "images/banners/rcr-hero-alpha.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Reporter" },
