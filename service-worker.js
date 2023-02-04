@@ -1,4 +1,4 @@
-const cacheName = "2023-02-03 21:17:21";
+const cacheName = "2023-02-03 21:19:43";
 const cacheFiles = [
 	"data/core.js",
 	"data/rcr.js",

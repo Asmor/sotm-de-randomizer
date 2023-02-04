@@ -53,10 +53,11 @@ button {
 .panel {
   display: inline-flex;
   flex-direction: column;
-  justify-content: center; }
-  @media (min-width: 1000px) {
+  justify-content: center;
+  max-width: 50%; }
+  @media (max-width: 1000px) {
     .panel {
-      max-width: 50%; } }
+      max-width: 100%; } }
 
 .section {
   display: inline-flex;

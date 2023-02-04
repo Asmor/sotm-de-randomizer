@@ -78,9 +78,10 @@ button {
 	display: inline-flex;
 	flex-direction: column;
 	justify-content: center;
+	max-width: 50%;
 
-	@media (min-width: $layout-breakpoint) {
-		max-width: 50%;
+	@media (max-width: $layout-breakpoint) {
+		max-width: 100%;
 	}
 }
 
