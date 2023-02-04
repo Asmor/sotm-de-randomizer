@@ -2,6 +2,10 @@ import { generate } from "./generator.js";
 import configPanel from "./config.js";
 import { thawed } from "./storage.js";
 
+// Still figuring out how to get it to handle new versions gracefully, so for
+// now this is disabled
+const ENABLE_OFFLINE = false;
+
 const infoPanel = document.querySelector(".info");
 
 document.getElementById("generate-button").addEventListener("click", generate);
@@ -18,15 +22,26 @@ document.body.appendChild(configPanel);
 
 thawed.then(generate);
 
-// Still figuring out how to get it to handle new versions gracefully, so for
-// now this is disabled
-// if ( "serviceWorker" in navigator ) {
-// 	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
-// 			registration => {
-// 				registration.onupdatefound = () => {
-// 					alert("Found an update!");
-// 				}
-// 			}
-// 	));
-// }
+if ( ENABLE_OFFLINE && "serviceWorker" in navigator ) {
+	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
+			registration => {
+				// registration.onupdatefound = () => {
+				// 	console.log("Found an update to service worker!");
+				// }
+				registration.addEventListener("updatefound", (evt) => {
+					console.log("Found an update to service worker!", evt);
+					location.reload();
+				});
+			}
+	));
 
+	navigator.serviceWorker.addEventListener("message", evt => {
+		let payload = evt.data.payload || evt.data;
+
+		if ( evt.data.jsonEncoded ) {
+			payload = JSON.parse(payload);
+		}
+
+		console.log("[Service worker]", ...payload);
+	});
+}

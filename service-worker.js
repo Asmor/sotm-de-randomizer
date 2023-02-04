@@ -1,4 +1,4 @@
-const cacheName = "2023-02-03 19:32:20";
+const cacheName = "2023-02-03 20:21:53";
 const cacheFiles = [
 	"data/core.js",
 	"data/rcr.js",
@@ -32,6 +32,7 @@ const cacheFiles = [
 	"images/banners/rcr-hero-nightmist.png",
 	"images/banners/rcr-hero-setback.png",
 	"images/background.jpg",
+	"images/favicon.ico",
 	"resources/KMKDSPK_.ttf",
 	"scripts/app.js",
 	"scripts/config.js",
@@ -45,12 +46,29 @@ const cacheFiles = [
 	"index.html",
 ];
 
-const log = (...args) => console.log("[Service worker]", ...args);
+const getLogger = evt => {
+	const getClient = clients.get(evt.clientId);
+
+	return async (...args) => {
+		const payload = JSON.stringify([`[${cacheName}]`, ...args]);
+
+		// getClient.then(client => client.postMessage({ payload, jsonEncoded: true }));
+	};
+}
+
 
 self.addEventListener("install", e => {
+	const log = getLogger(e);
 	log("Installed.");
 
+	self.skipWaiting();
+
 	e.waitUntil((async () => {
+		caches.keys().then(
+			keys => keys.filter(key => key !== cacheName)
+				.forEach(key => caches.delete(key))
+		);
+
 		const cache = await caches.open(cacheName);
 		log("Caching content");
 		await cache.addAll(cacheFiles);
@@ -59,7 +77,7 @@ self.addEventListener("install", e => {
 });
 
 self.addEventListener("fetch", e => {
-	log("Trying to make fetch happen");
+	const log = getLogger(e);
 	e.respondWith(
 		(async () => {
 			const r = await caches.match(e.request);
@@ -81,6 +99,7 @@ self.addEventListener("fetch", e => {
 });
 
 self.addEventListener("activate", () => {
+	const log = getLogger(e);
 	log("Activated!");
 	self.clients.claim();
 });
