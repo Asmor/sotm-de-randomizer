@@ -47,12 +47,16 @@ button {
   justify-content: center; }
   @media (max-width: 1000px) {
     .page {
-      flex-direction: column; } }
+      flex-direction: column;
+      align-items: center; } }
 
 .panel {
   display: inline-flex;
   flex-direction: column;
   justify-content: center; }
+  @media (min-width: 1000px) {
+    .panel {
+      max-width: 50%; } }
 
 .section {
   display: inline-flex;
@@ -123,7 +127,9 @@ button {
   text-align: center; }
 
 .hero-panel {
-  position: relative; }
+  position: relative;
+  width: 600px;
+  max-width: 100%; }
   .hero-panel .hero-panel--image {
     align-self: center;
     max-width: 100%; }
