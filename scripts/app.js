@@ -18,11 +18,15 @@ document.body.appendChild(configPanel);
 
 thawed.then(generate);
 
-if ( "serviceWorker" in navigator ) {
-	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
-		(...args) => {
-			console.log("Service worker registered", args);
-		}
-	));
-}
+// Still figuring out how to get it to handle new versions gracefully, so for
+// now this is disabled
+// if ( "serviceWorker" in navigator ) {
+// 	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
+// 			registration => {
+// 				registration.onupdatefound = () => {
+// 					alert("Found an update!");
+// 				}
+// 			}
+// 	));
+// }
 
