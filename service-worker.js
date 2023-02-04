@@ -1,4 +1,4 @@
-const cacheName = "2023-02-03 20:21:53";
+const cacheName = "2023-02-03 20:38:27";
 const cacheFiles = [
 	"data/core.js",
 	"data/rcr.js",
@@ -52,7 +52,7 @@ const getLogger = evt => {
 	return async (...args) => {
 		const payload = JSON.stringify([`[${cacheName}]`, ...args]);
 
-		// getClient.then(client => client.postMessage({ payload, jsonEncoded: true }));
+		getClient.then(client => client.postMessage({ payload, jsonEncoded: true }));
 	};
 }
 

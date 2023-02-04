@@ -4,7 +4,7 @@ import { thawed } from "./storage.js";
 
 // Still figuring out how to get it to handle new versions gracefully, so for
 // now this is disabled
-const ENABLE_OFFLINE = false;
+const ENABLE_OFFLINE = true;
 
 const infoPanel = document.querySelector(".info");
 
@@ -23,11 +23,9 @@ document.body.appendChild(configPanel);
 thawed.then(generate);
 
 if ( ENABLE_OFFLINE && "serviceWorker" in navigator ) {
+	console.log("attempting to enable service worker")
 	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
 			registration => {
-				// registration.onupdatefound = () => {
-				// 	console.log("Found an update to service worker!");
-				// }
 				registration.addEventListener("updatefound", (evt) => {
 					console.log("Found an update to service worker!", evt);
 					location.reload();
