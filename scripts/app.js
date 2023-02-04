@@ -2,8 +2,9 @@ import { generate } from "./generator.js";
 import configPanel from "./config.js";
 import { thawed } from "./storage.js";
 
-// Still figuring out how to get it to handle new versions gracefully, so for
-// now this is disabled
+// Controls whether service worker is enabled. Note that just setting this to
+// false may be insufficient if there's already a service worker installed,
+// you'll need to deregister the service worker in your browser as well.
 const ENABLE_OFFLINE = true;
 
 const infoPanel = document.querySelector(".info");
