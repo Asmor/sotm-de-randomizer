@@ -20,7 +20,7 @@ export default {
 			{ set: "rcr", name: "Dark Watch", team: true },
 			{ set: "rcr", name: "Blood Raven" },
 		] },
-		{ name: "Mister Fixer", image: null, variants: [
+		{ name: "Mister Fixer", image: "images/banners/rcr-hero-mister-fixer.png", variants: [
 			{ set: "rcr", name: "Base", base: true },
 			{ set: "rcr", name: "First Appearance" },
 			{ set: "rcr", name: "Dark Watch", team: true },
