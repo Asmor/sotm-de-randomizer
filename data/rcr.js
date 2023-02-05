@@ -53,8 +53,8 @@ export default {
 	environments: [
 		{ name: "Diamond Manor",           image: null },
 		{ name: "Pike Industrial Complex", image: null },
-		{ name: "Realm of Discord",        image: null },
+		{ name: "Realm of Discord",        image: "images/banners/rcr-environment-realm-of-discord.png" },
 		{ name: "Rook City",               image: null },
-		{ name: "Temple of Zhu Long",      image: null },
+		{ name: "Temple of Zhu Long",      image: "images/banners/rcr-environment-temple-of-zhu-long.png" },
 	],
 };
