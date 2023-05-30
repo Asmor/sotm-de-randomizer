@@ -51,10 +51,10 @@ export default {
 		{ name: "Terrorform",       image: null },
 	],
 	environments: [
-		{ name: "Diamond Manor",           image: null },
-		{ name: "Pike Industrial Complex", image: null },
+		{ name: "Diamond Manor",           image: "images/banners/rcr-environment-diamond-manor.png" },
+		{ name: "Pike Industrial Complex", image: "images/banners/rcr-environment-pike-industrial-complex.png" },
 		{ name: "Realm of Discord",        image: "images/banners/rcr-environment-realm-of-discord.png" },
-		{ name: "Rook City",               image: null },
+		{ name: "Rook City",               image: "images/banners/rcr-environment-rook-city.png" },
 		{ name: "Temple of Zhu Long",      image: "images/banners/rcr-environment-temple-of-zhu-long.png" },
 	],
 };
