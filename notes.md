@@ -1,0 +1,1 @@
+- Banners produced by BGG user @pdzoch, from [this thread](https://boardgamegeek.com/thread/2817386/requesting-banners-for-sentinels-of-the-multiverse/page/1)
