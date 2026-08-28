@@ -45,7 +45,9 @@ const pickQty = ({ list, qty }) => {
 
 const pickOne = (list) => pickQty({ list, qty: 1 })[0];
 
-const getImg = (item) => {
+const getImg = (item, results) => {
+  const hasNemesis = results.villain.nemesis?.id === item.id;
+
   let image = `<span class="no-image">${item.name}</span>`;
 
   if (typeof item.image === "string") {
@@ -67,14 +69,16 @@ const getImg = (item) => {
     }
   }
 
-  return `<div class="hero-panel">
+  return `<div class="hero-panel ${hasNemesis ? "nemesis" : ""}">
 		${image}
 		${variant}
 	</div>`;
 };
 
 const display = (results) => {
-  const heroLines = results.heroes.map(getImg).join("");
+  const heroLines = results.heroes
+    .map((hero) => getImg(hero, results))
+    .join("");
 
   document.getElementById("results").innerHTML = `
 		<div class="page">
@@ -82,16 +86,16 @@ const display = (results) => {
 				<div class="section section__heroes">${heroLines}</div>
 			</div>
 			<div class="panel panel__other">
-				<div class="section section__villain">${getImg(results.villain)}</div>
-				<div class="section section__environment">${getImg(results.environment)}</div>
+				<div class="section section__villain">${getImg(results.villain, results)}</div>
+				<div class="section section__environment">${getImg(results.environment, results)}</div>
 			</div>
 		</div>
 	`;
 };
 
-function makeImageTag(src, name) {
+function makeImageTag(src, name, extraClasses = "") {
   return `<img
-			class="hero-panel--image"
+			class="hero-panel--image ${extraClasses}"
 			src="${src}"
 			alt="${name}"
 			title="${name}"

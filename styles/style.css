@@ -12,7 +12,9 @@ body {
   margin-bottom: 20px;
   margin-top: 40px; }
 
-body, button, input {
+body,
+button,
+input {
   font-size: 1.2em;
   font-family: komika;
   text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
@@ -138,6 +140,12 @@ button {
     position: absolute;
     bottom: 0;
     left: 0; }
+  .hero-panel.nemesis:after {
+    content: "NEMESIS ACTIVE!";
+    color: red;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
 
 .config-panel {
   position: fixed;

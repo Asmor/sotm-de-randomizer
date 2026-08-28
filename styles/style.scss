@@ -7,196 +7,204 @@ $dark: #333;
 $config-header-height: 30px;
 
 @font-face {
-	font-family: "komika";
-	src: url("../resources/KMKDSPK_.ttf");
+  font-family: "komika";
+  src: url("../resources/KMKDSPK_.ttf");
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: transparent;
-	margin-bottom: 20px;
-	margin-top: $config-header-height + 10px;
+  background-color: transparent;
+  margin-bottom: 20px;
+  margin-top: $config-header-height + 10px;
 }
 
-body, button, input {
-	font-size: 1.2em;
-	font-family: komika;
-	text-shadow:
-		 2px  2px white,
-		 2px -2px white,
-		-2px  2px white,
-		-2px -2px white,
-	;
-	color: $dark;
+body,
+button,
+input {
+  font-size: 1.2em;
+  font-family: komika;
+  text-shadow:
+    2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
+  color: $dark;
 }
 
 .background {
-	background-image: url("../images/background.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: -1;
+  background-image: url("../images/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
 button {
-	padding-left: 10px;
-	padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .controls {
-	display: flex;
-	justify-content: space-around;
-	margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }
 
 .hero-count-wrapper > label {
-	margin: 0 5px;
+  margin: 0 5px;
 }
 
 .page {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 
-	 @media (max-width: $layout-breakpoint) {
-	 	flex-direction: column;
-		align-items: center;
-	 }
+  @media (max-width: $layout-breakpoint) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .panel {
-	display: inline-flex;
-	flex-direction: column;
-	justify-content: center;
-	max-width: 50%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
 
-	@media (max-width: $layout-breakpoint) {
-		max-width: 100%;
-	}
+  @media (max-width: $layout-breakpoint) {
+    max-width: 100%;
+  }
 }
 
 .section {
-	display: inline-flex;
-	flex-direction: column;
-	margin: 10px;
-	position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  position: relative;
 
-	&:before {
-		bottom: 100%;
-		font-size: 2rem;
-		left: 50%;
-		position: absolute;
-		transform: translateX(-50%);
-	}
+  &:before {
+    bottom: 100%;
+    font-size: 2rem;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
 
-	&.section__villain,
-	&.section__environment {
-		margin-top: 30px;
-	}
+  &.section__villain,
+  &.section__environment {
+    margin-top: 30px;
+  }
 
-	&.section__villain {
-		&:before {
-			content: "vs.";
-		}
-	}
+  &.section__villain {
+    &:before {
+      content: "vs.";
+    }
+  }
 
-	&.section__environment {
-		&:before {
-			content: "at";
-		}
-	}
+  &.section__environment {
+    &:before {
+      content: "at";
+    }
+  }
 
-	> img {
-		align-self: center;
-		margin: 10px;
-		max-width: 100%;
-	}
-
+  > img {
+    align-self: center;
+    margin: 10px;
+    max-width: 100%;
+  }
 }
 
 .attributions {
-	display: none;
-	padding-right: 30px;
-	position: relative;
+  display: none;
+  padding-right: 30px;
+  position: relative;
 }
 
 .info-target {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .info-close {
-	bottom: 15px;
-	cursor: pointer;
-	position: fixed;
-	right: 20px;
+  bottom: 15px;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
 }
 
 .info {
-	bottom: 10px;
-	position: fixed;
-	right: 10px;
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
 
-	&.info__expanded {
-		background: white;
-		border: 3px solid $dark;
-		padding: 5px;
+  &.info__expanded {
+    background: white;
+    border: 3px solid $dark;
+    padding: 5px;
 
-		.info-target {
-			display: none;
-		}
+    .info-target {
+      display: none;
+    }
 
-		.attributions {
-			display: block;
-		}
-	}
+    .attributions {
+      display: block;
+    }
+  }
 }
 
 .no-image {
-	align-items: center;
-	align-self: center;
-	background-color: $light;
-	border: 3px solid $dark;
-	color: $dark;
-	display: flex;
-	font-size: 2rem;
-	height: 100px;
-	justify-content: center;
-	margin: 10px 0;
-	max-width: 600px;
-	text-align: center;
-	width: 100%;
+  align-items: center;
+  align-self: center;
+  background-color: $light;
+  border: 3px solid $dark;
+  color: $dark;
+  display: flex;
+  font-size: 2rem;
+  height: 100px;
+  justify-content: center;
+  margin: 10px 0;
+  max-width: 600px;
+  text-align: center;
+  width: 100%;
 }
 
 .not-enough-content {
-	padding: 10px;
-	text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 
 .hero-panel {
-	position: relative;
-	width: 600px;
-	max-width: 100%;
+  position: relative;
+  width: 600px;
+  max-width: 100%;
 
-	.hero-panel--image {
-		align-self: center;
-		max-width: 100%;
-	}
+  .hero-panel--image {
+    align-self: center;
+    max-width: 100%;
+  }
 
-	.hero-panel--variant {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-	}
+  .hero-panel--variant {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.nemesis:after {
+    content: "NEMESIS ACTIVE!";
+    color: red;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 @import "config.scss";

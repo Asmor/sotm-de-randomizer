@@ -1,6 +1,9 @@
-const cacheName = "2026-08-28.08";
+const cacheName = "2026-08-28.16";
 
 const appFiles = [
+  "data/heroes.js",
+  "data/villains.js",
+  "data/environments.js",
   "data/core.js",
   "data/rcr.js",
   "data/disp.js",
