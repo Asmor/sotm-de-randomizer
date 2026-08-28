@@ -198,12 +198,28 @@ button {
     left: 0;
   }
 
-  &.nemesis:after {
-    content: "NEMESIS ACTIVE!";
-    color: red;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  &.nemesis {
+    --outerSize: 2px;
+    --innerSize: 2px;
+    --outerSizeNeg: calc(var(--outerSize) * -1);
+    --innerSizeNeg: calc(var(--innerSize) * -1);
+    --blur: 1px;
+    filter: drop-shadow(var(--outerSize) var(--outerSize) var(--blur) white)
+      drop-shadow(var(--outerSize) var(--outerSizeNeg) var(--blur) white)
+      drop-shadow(var(--outerSizeNeg) var(--outerSize) var(--blur) white)
+      drop-shadow(var(--outerSizeNeg) var(--outerSizeNeg) var(--blur) white)
+      drop-shadow(var(--innerSize) var(--innerSize) var(--blur) red)
+      drop-shadow(var(--innerSize) var(--innerSizeNeg) var(--blur) red)
+      drop-shadow(var(--innerSizeNeg) var(--innerSize) var(--blur) red)
+      drop-shadow(var(--innerSizeNeg) var(--innerSizeNeg) var(--blur) red);
+
+    &:after {
+      content: "Nemesis alert!";
+      color: red;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 

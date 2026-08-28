@@ -1,4 +1,4 @@
-const cacheName = "2026-08-28.16";
+const cacheName = "2026-08-28.17";
 
 const appFiles = [
   "data/heroes.js",
