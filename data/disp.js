@@ -4,7 +4,7 @@ export default {
   heroes: [
     {
       name: "Chrono-Ranger",
-      image: null,
+      image: "images/banners/disp-hero-chrono-ranger.png",
       variants: [
         { set: "disp", name: "Base", base: true },
         { set: "disp", name: "First Appearance" },
@@ -14,7 +14,7 @@ export default {
     },
     {
       name: "Darkstrife & Painstake",
-      image: null,
+      image: "images/banners/disp-hero-darkstrife-painstake.png",
       variants: [
         { set: "disp", name: "Base", base: true },
         { set: "disp", name: "First Appearance" },
@@ -24,7 +24,7 @@ export default {
     },
     {
       name: "KNYFE",
-      image: null,
+      image: "images/banners/disp-hero-knyfe.png",
       variants: [
         { set: "disp", name: "Base", base: true },
         { set: "disp", name: "First Appearance" },
@@ -34,7 +34,7 @@ export default {
     },
     {
       name: "Omnitron-X",
-      image: null,
+      image: "images/banners/disp-hero-omnitron-x.png",
       variants: [
         { set: "disp", name: "Base", base: true },
         { set: "disp", name: "First Appearance" },
@@ -44,7 +44,7 @@ export default {
     },
     {
       name: "Parse",
-      image: null,
+      image: "images/banners/disp-hero-parse.png",
       variants: [
         { set: "disp", name: "Base", base: true },
         { set: "disp", name: "First Appearance" },
@@ -54,7 +54,7 @@ export default {
     },
     {
       name: "The Visionary",
-      image: null,
+      image: "images/banners/disp-hero-visionary.png",
       variants: [
         { set: "disp", name: "Base", base: true },
         { set: "disp", name: "First Appearance" },
@@ -64,21 +64,39 @@ export default {
     },
   ],
   villains: [
-    { name: "Apostate", image: null },
-    { name: "La Capitan", image: null },
-    { name: "The Dreamer", image: null },
-    { name: "The Ennead", image: null },
-    { name: "Grimm", image: null },
-    { name: "Iron Legacy", image: null },
-    { name: "Miss Information", image: null },
-    { name: "Necrosis", image: null },
-    { name: "The Ruler of Æternus", image: null },
+    { name: "Apostate", image: "images/banners/disp-villain-apostate.png" },
+    { name: "La Capitan", image: "images/banners/disp-villain-capitan.png" },
+    { name: "The Dreamer", image: "images/banners/disp-villain-dreamer.png" },
+    { name: "The Ennead", image: "images/banners/disp-villain-ennead.png" },
+    { name: "Grimm", image: "images/banners/disp-villain-grimm.png" },
+    {
+      name: "Iron Legacy",
+      image: "images/banners/disp-villain-iron-legacy.png",
+    },
+    {
+      name: "Miss Information",
+      image: "images/banners/disp-villain-miss-information.png",
+    },
+    { name: "Necrosis", image: "images/banners/disp-villain-necrosis.png" },
+    {
+      name: "The Ruler of Æternus",
+      image: "images/banners/disp-villain-ruler-of-aeternus.png",
+    },
   ],
   environments: [
-    { name: "Æternus", image: null },
-    { name: "Block, The", image: null },
-    { name: "Final Wasteland, The", image: null },
-    { name: "Silver Gulch 1883", image: null },
-    { name: "Tomb of Anubis", image: null },
+    { name: "Æternus", image: "images/banners/disp-environment-aeternus.png" },
+    { name: "Block, The", image: "images/banners/disp-environment-block.png" },
+    {
+      name: "Final Wasteland, The",
+      image: "images/banners/disp-environment-final-wasteland.png",
+    },
+    {
+      name: "Silver Gulch 1883",
+      image: "images/banners/disp-environment-silver-gulch-1883.png",
+    },
+    {
+      name: "Tomb of Anubis",
+      image: "images/banners/disp-environment-tomb-of-anubis.png",
+    },
   ],
 };

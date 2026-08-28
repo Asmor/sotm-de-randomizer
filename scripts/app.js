@@ -12,35 +12,38 @@ const infoPanel = document.querySelector(".info");
 document.getElementById("generate-button").addEventListener("click", generate);
 
 infoPanel.querySelector(".info-target").addEventListener("click", () => {
-	infoPanel.classList.add("info__expanded");
+  infoPanel.classList.add("info__expanded");
 });
 
 infoPanel.querySelector(".info-close").addEventListener("click", () => {
-	infoPanel.classList.remove("info__expanded");
+  infoPanel.classList.remove("info__expanded");
 });
 
 document.body.appendChild(configPanel);
 
 thawed.then(generate);
 
-if ( ENABLE_OFFLINE && "serviceWorker" in navigator ) {
-	console.log("attempting to enable service worker")
-	addEventListener("load", () => navigator?.serviceWorker.register("service-worker.js").then(
-			registration => {
-				registration.addEventListener("updatefound", (evt) => {
-					console.log("Found an update to service worker!", evt);
-					location.reload();
-				});
-			}
-	));
+if (ENABLE_OFFLINE && "serviceWorker" in navigator) {
+  console.log("attempting to enable service worker");
+  addEventListener("load", () =>
+    navigator?.serviceWorker
+      .register("service-worker.js")
+      .then((registration) => {
+        console.log("service worker registered");
+        registration.addEventListener("updatefound", (evt) => {
+          console.log("Found an update to service worker!", evt);
+          location.reload();
+        });
+      }),
+  );
 
-	navigator.serviceWorker.addEventListener("message", evt => {
-		let payload = evt.data.payload || evt.data;
+  navigator.serviceWorker.addEventListener("message", (evt) => {
+    let payload = evt.data.payload || evt.data;
 
-		if ( evt.data.jsonEncoded ) {
-			payload = JSON.parse(payload);
-		}
+    if (evt.data.jsonEncoded) {
+      payload = JSON.parse(payload);
+    }
 
-		console.log("[Service worker]", ...payload);
-	});
+    console.log("[Service worker]", ...payload);
+  });
 }

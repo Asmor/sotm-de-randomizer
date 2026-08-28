@@ -123,22 +123,22 @@ export default {
   villains: [
     {
       name: "Akash'Buta",
-      image: "images/banners/core-villain-akash-bhuta.webp",
+      image: "images/banners/core-villain-akash-bhuta.png",
     },
     {
       name: "Baron Blade",
-      image: "images/banners/core-villain-baron-blade.webp",
+      image: "images/banners/core-villain-baron-blade.png",
     },
     {
       name: "Citizen Dawn",
-      image: "images/banners/core-villain-citizen-dawn.webp",
+      image: "images/banners/core-villain-citizen-dawn.png",
     },
     {
       name: "Grand Warlord Voss",
-      image: "images/banners/core-villain-grand-warlord-voss.webp",
+      image: "images/banners/core-villain-grand-warlord-voss.png",
     },
-    { name: "Matriarch", image: "images/banners/core-villain-matriarch.webp" },
-    { name: "Omnitron", image: "images/banners/core-villain-omnitron.webp" },
+    { name: "Matriarch", image: "images/banners/core-villain-matriarch.png" },
+    { name: "Omnitron", image: "images/banners/core-villain-omnitron.png" },
   ],
   environments: [
     {
