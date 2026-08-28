@@ -1,96 +1,101 @@
 import { getContent } from "./content.js";
 
 const generate = () => {
-	const qty = document.querySelector("input[name='hero-count']:checked").value || 4;
+  const qty =
+    document.querySelector("input[name='hero-count']:checked").value || 4;
 
-	const content = getContent();
+  const content = getContent();
 
-	if (
-		content.heroes.length === 0
-		|| content.villains.length === 0
-		|| content.environments.length === 0
-	) {
-		document.getElementById("results").innerHTML = `
+  if (
+    content.heroes.length === 0 ||
+    content.villains.length === 0 ||
+    content.environments.length === 0
+  ) {
+    document.getElementById("results").innerHTML = `
 			<div class="not-enough-content">
 				Not enough content, please open settings and enable additional
 				sets.
 			</div>
 		`;
-		return;
-	}
+    return;
+  }
 
-	const picked = {
-		heroes: pickQty({ list: content.heroes, qty }),
-		villain: pickOne(content.villains),
-		environment: pickOne(content.environments),
-		qty,
-	};
+  const picked = {
+    heroes: pickQty({ list: content.heroes, qty }),
+    villain: pickOne(content.villains),
+    environment: pickOne(content.environments),
+    qty,
+  };
 
-	display(picked);
+  display(picked);
 };
 
 const pickQty = ({ list, qty }) => {
-	const copy = [...list];
-	const results = [];
-	qty ||= 1;
+  const copy = [...list];
+  const results = [];
+  qty ||= 1;
 
-	while ( copy.length && results.length < qty ) {
-		const index = Math.floor(Math.random() * copy.length);
-		results.push(copy.splice(index, 1)[0]);
-	}
+  while (copy.length && results.length < qty) {
+    const index = Math.floor(Math.random() * copy.length);
+    results.push(copy.splice(index, 1)[0]);
+  }
 
-	return results.sort((a,b) => a.name.localeCompare(b.name));
+  return results.sort((a, b) => a.name.localeCompare(b.name));
 };
 
-const pickOne = list => pickQty({ list, qty: 1 })[0];
+const pickOne = (list) => pickQty({ list, qty: 1 })[0];
 
-const getImg = item => {
-	let image = `<span class="no-image">${item.name}</span>`;
+const getImg = (item) => {
+  let image = `<span class="no-image">${item.name}</span>`;
 
-	if ( item.image ) {
-		image = `<img
-			class="hero-panel--image"
-			src="${item.image}"
-			alt="${item.name}"
-			title="${item.name }"
-		>`;
-	}
+  if (typeof item.image === "string") {
+    image = makeImageTag(item.image, item.name);
+  } else if (Array.isArray(item.image)) {
+    image = item.image.map((src) => makeImageTag(src, item.name)).join("");
+  }
 
-	let variant = "";
+  let variant = "";
 
-	if ( item.variants ) {
-		const chosenVariant = pickOne(item.variants);
-		if ( !chosenVariant.base ) {
-			variant = `
+  if (item.variants) {
+    const chosenVariant = pickOne(item.variants);
+    if (!chosenVariant.base) {
+      variant = `
 				<span class="hero-panel--variant">
-					Variant: ${chosenVariant.name }
+					Variant: ${chosenVariant.name}
 				</span>
 			`;
-		}
-	}
+    }
+  }
 
-	return `<div class="hero-panel">
+  return `<div class="hero-panel">
 		${image}
 		${variant}
 	</div>`;
 };
 
-const display = results => {
-	const heroLines = results.heroes.map(getImg).join("");
+const display = (results) => {
+  const heroLines = results.heroes.map(getImg).join("");
 
-	document.getElementById("results").innerHTML = `
+  document.getElementById("results").innerHTML = `
 		<div class="page">
 			<div class="panel panel__heroes">
-				<div class="section section__heroes">${ heroLines }</div>
+				<div class="section section__heroes">${heroLines}</div>
 			</div>
 			<div class="panel panel__other">
-				<div class="section section__villain">${ getImg(results.villain) }</div>
-				<div class="section section__environment">${ getImg(results.environment) }</div>
+				<div class="section section__villain">${getImg(results.villain)}</div>
+				<div class="section section__environment">${getImg(results.environment)}</div>
 			</div>
 		</div>
 	`;
 };
 
-export {
-	generate,
-};
+function makeImageTag(src, name) {
+  return `<img
+			class="hero-panel--image"
+			src="${src}"
+			alt="${name}"
+			title="${name}"
+		>`;
+}
+
+export { generate };

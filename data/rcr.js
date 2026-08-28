@@ -68,7 +68,10 @@ export default {
     { name: "Apex", image: "images/banners/rcr-villain-apex.png" },
     {
       name: "The Fey Court",
-      image: "images/banners/rcr-villain-fey-court-dagda.png",
+      image: [
+        "images/banners/rcr-villain-fey-court-dagda.png",
+        "images/banners/rcr-villain-fey-court-morrigan.png",
+      ],
     },
     {
       name: "Gloomweaver",
